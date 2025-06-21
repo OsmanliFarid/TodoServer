@@ -10,8 +10,8 @@ export const AllTodo = (req, res) => {
 
 export const CreateTodo = (req, res) => {
   const TodoData = {
-    todo: "Ders Oxu",
-    isDone: false,
+    todo: "Ders gedirem",
+    isDone: true,
   };
 
   TodoModel.create(TodoData).then(() => {
