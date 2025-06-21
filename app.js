@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { AllTodo, CreateTodo } from "./Controller/Todo.js";
+import { AllTodo, CreateTodo, DeleteTodo } from "./Controller/Todo.js";
 
 dotenv.config();
 
@@ -12,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 
 const port = 8080;
-
 // listen port
 app.listen(port, () => {
   console.log(`Server işləyir: ${port}`);
@@ -31,3 +30,5 @@ app.get("/todos", AllTodo);
 
 //post request
 app.post("/todos", CreateTodo);
+
+app.delete("/todos/:id", DeleteTodo);

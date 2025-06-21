@@ -21,3 +21,21 @@ export const CreateTodo = (req, res) => {
     });
   });
 };
+
+export const DeleteTodo = (req, res) => {
+  const id = req.params.id;
+
+  TodoModel.findByIdAndDelete(id)
+    .then(() => {
+      res.status(200).json({
+        success: true,
+        mesaj: "ugurla silindi",
+      });
+    })
+    .catch(() => {
+      res.status(404).json({
+        success: 404,
+        mesaj: "error var",
+      });
+    });
+};
