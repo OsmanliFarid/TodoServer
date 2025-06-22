@@ -39,3 +39,17 @@ export const DeleteTodo = (req, res) => {
       });
     });
 };
+export const UpdateTodo = (req, res) => {
+  const id = req.params.id;
+  const _data = req.body;
+  TodoModel.findByIdAndUpdate(id, _data).then((data) => {
+    res.status(200).json({
+      success: true,
+      mesaj: "ugurla tamamlandi",
+    });
+    res.status(404).json({
+      success: false,
+      mesaj: "404 xetasi",
+    });
+  });
+};

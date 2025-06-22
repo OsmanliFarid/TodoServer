@@ -2,7 +2,12 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { AllTodo, CreateTodo, DeleteTodo } from "./Controller/Todo.js";
+import {
+  AllTodo,
+  CreateTodo,
+  DeleteTodo,
+  UpdateTodo,
+} from "./Controller/Todo.js";
 
 dotenv.config();
 
@@ -32,3 +37,5 @@ app.get("/todos", AllTodo);
 app.post("/todos", CreateTodo);
 
 app.delete("/todos/:id", DeleteTodo);
+
+app.put("/todos/:id", UpdateTodo);
