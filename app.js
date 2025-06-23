@@ -39,4 +39,5 @@ app.post("/todos", CreateTodo);
 app.delete("/todos/:id", DeleteTodo);
 
 app.put("/todos/:id", UpdateTodo);
+console.log("deyil");
 console.log("salam");
