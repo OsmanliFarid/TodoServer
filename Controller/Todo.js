@@ -9,15 +9,12 @@ export const AllTodo = (req, res) => {
 };
 
 export const CreateTodo = (req, res) => {
-  const TodoData = {
-    todo: "Ders gedirem",
-    isDone: true,
-  };
+  const TodoData = req.body;
 
-  TodoModel.create(TodoData).then(() => {
+  TodoModel.create(TodoData).then((data) => {
     res.status(201).json({
       success: true,
-      data: TodoData,
+      data,
     });
   });
 };
@@ -46,10 +43,6 @@ export const UpdateTodo = (req, res) => {
     res.status(200).json({
       success: true,
       mesaj: "ugurla tamamlandi",
-    });
-    res.status(404).json({
-      success: false,
-      mesaj: "404 xetasi",
     });
   });
 };
