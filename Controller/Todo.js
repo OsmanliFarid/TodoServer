@@ -26,7 +26,7 @@ export const DeleteTodo = (req, res) => {
     .then(() => {
       res.status(200).json({
         success: true,
-        mesaj: "ugurla silindi",
+        mesaj: "ugurla silind",
       });
     })
     .catch(() => {
